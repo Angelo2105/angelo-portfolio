@@ -33,3 +33,19 @@ button{
 button:hover{
     background:#0077cc;
 }
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration:none;
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+}
+nav a:hover{
+    color:#69b4ff;
+}
