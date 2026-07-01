@@ -17,7 +17,7 @@
 
         <nav>
 
-            <a href="resume.pdf" target="_blank">Resume</a>
+            <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
             <a href="#contact">Contact</a>
 
         </nav>
@@ -36,8 +36,98 @@
 
             <button id="projectsButton">View My Projects</button>
 
+
         </section>
 
+
+
+        <section id="projects">
+
+            <h2>Projects</h2>
+
+            <div class="project-card" id="taskAutomation">
+
+                <h3>Task Automation</h3>
+
+                <p>
+                    Python automation for downloading,
+                    organizing, and processing construction files.
+                </p>
+
+            </div>
+
+            <div id="projectViewer" class="hidden">
+
+                <div class="projectInfo">
+
+                    <h2>Task Automation</h2>
+
+                    <p>
+                        This project automates downloading construction
+                        documents from Klaros using Playwright while a
+                        second Python program monitors downloads,
+                        processes files, and organizes them automatically.
+                    </p>
+
+                </div>
+
+                <div class="workspace">
+
+                    <div class="explorer">
+
+                        <h3>Project Explorer</h3>
+
+                        <div class="folder">
+
+                            <h4>📂 Download Monitor</h4>
+
+                            <button class="fileButton" id="testFile">
+                                🐍 test.py
+                            </button>
+
+                            <button class="fileButton" id="downloadScanFile">
+                                🐍 download_scan.py
+                            </button>
+
+                        </div>
+
+                        <div class="folder">
+
+                            <h4>📂 Browser Automation</h4>
+
+                            <button class="fileButton" id="loopFile">
+                                🐍 klaros_loop2.py
+                            </button>
+
+                            <button class="fileButton" id="specificationsFile">
+                                🐍 klaros_specifications.py
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="editor">
+
+                        <div class="editorTab" id="editorTab">
+
+                            ● Select a file
+
+                        </div>
+
+                        <pre id="codeDisplay">
+
+Choose a file from the Project Explorer.
+
+                        </pre>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
     </main>
 
     <script src="script.js"></script>

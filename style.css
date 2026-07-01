@@ -5,9 +5,8 @@ body{
     font-family:Arial, sans-serif;
     display:flex;
     flex-direction:column;
-    justify-content:center;
     align-items:center;
-    height:100vh;
+    min-height:100vh;
 }
 
 h1{
@@ -55,4 +54,198 @@ nav a:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.hidden{
+    display:none;
+}
+
+.codeWindow{
+
+    display:flex;
+
+    margin-top:30px;
+
+    background:#1d1d1d;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    min-height:500px;
+
+}
+
+.explorer{
+
+    width:240px;
+
+    background:#252526;
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.editor{
+
+    flex:1;
+
+    background:#1e1e1e;
+
+    padding:20px;
+
+}
+
+.fileButton{
+
+    background:none;
+
+    color:white;
+
+    border:none;
+
+    text-align:left;
+
+    padding:12px;
+
+    cursor:pointer;
+
+    border-radius:6px;
+
+}
+
+.fileButton:hover{
+
+    background:#3b3b3b;
+
+}
+
+pre{
+
+    color:white;
+
+    white-space:pre-wrap;
+
+}
+#projectViewer{
+
+    margin-top:40px;
+
+    width:100%;
+
+}
+
+.workspace{
+
+    display:flex;
+
+    margin-top:25px;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    background:#1e1e1e;
+
+    height:600px;
+
+}
+
+.explorer{
+
+    width:280px;
+
+    background:#252526;
+
+    padding:20px;
+
+    overflow-y:auto;
+
+}
+
+.editor{
+
+    flex:1;
+
+    background:#1e1e1e;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.editorTab{
+
+    background:#2d2d2d;
+
+    padding:15px;
+
+    font-weight:bold;
+
+    border-bottom:1px solid #444;
+
+}
+
+.folder{
+
+    margin-bottom:25px;
+
+}
+
+.fileButton{
+
+    width:100%;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    text-align:left;
+
+    padding:10px;
+
+    cursor:pointer;
+
+    border-radius:6px;
+
+    font-size:16px;
+
+}
+
+.fileButton:hover{
+
+    background:#37373d;
+
+}
+
+#codeDisplay{
+
+    margin:0;
+
+    padding:20px;
+
+    font-family:Consolas, monospace;
+
+    white-space:pre;
+
+    overflow:auto;
+
+    flex:1;
+
+    transition: opacity .2s ease;
+
+}
+.fileButton.active{
+
+    background:#37373d;
+
+    border-left:3px solid #007acc;
+    font-weight:bold;
+
 }
