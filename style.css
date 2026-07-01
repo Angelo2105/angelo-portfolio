@@ -53,6 +53,8 @@ nav a:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height:65vh;
+    justify-content:center;
 }
 
 .hidden{
@@ -62,6 +64,11 @@ nav a:hover{
 .container{
     width:min(1200px, 95%);
     margin:0 auto;
+    padding-bottom:60px;
+}
+
+#projects h2{
+    text-align:center;
 }
 
 .project-card{
@@ -71,6 +78,8 @@ nav a:hover{
     cursor:pointer;
     transition:.25s;
     border:1px solid #2f2f2f;
+    max-width:420px;
+    margin:0 auto;
 }
 
 .project-card:hover{
@@ -79,17 +88,62 @@ nav a:hover{
     box-shadow:0 10px 25px rgba(0,0,0,.3);
 }
 
+.project-card h3{
+    margin-top:0;
+    margin-bottom:0;
+}
+
+.cardDivider{
+    border:none;
+    border-top:1px solid #333;
+    margin:15px 0;
+}
+
+.cardTags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:15px;
+}
+
+.cardTags span{
+    background:#2d2d2d;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:13px;
+    color:#6cb6ff;
+    border:1px solid #3f3f46;
+}
+
+.cardMeta{
+    display:flex;
+    justify-content:space-between;
+    color:#888;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.openProjectButton{
+    width:100%;
+    padding:10px 20px;
+    font-size:15px;
+}
+
 #projectViewer{
     width:min(1200px, 95%);
     margin:40px auto;
     opacity:0;
-    transform:translateY(20px);
-    transition:.35s ease;
+    transform:translateY(25px) scale(.98);
+    transition:
+        opacity .35s,
+        transform .35s;
 }
 
 #projectViewer.show{
     opacity:1;
-    transform:translateY(0);
+    transform:
+        translateY(0)
+        scale(1);
 }
 
 .workspace{
@@ -113,6 +167,13 @@ nav a:hover{
     background:#1e1e1e;
     display:flex;
     flex-direction:column;
+}
+
+.editor pre{
+    margin:0;
+    flex:1;
+    overflow:auto;
+    background:#1e1e1e;
 }
 
 .editorTab{
