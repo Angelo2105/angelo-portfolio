@@ -7,6 +7,7 @@
     <title>Angelo Rodriguez</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
 </head>
 
 <body>
@@ -24,7 +25,7 @@
 
     </header>
 
-    <main>
+    <main class="container">
 
         <section id="hero">
 
@@ -36,10 +37,7 @@
 
             <button id="projectsButton">View My Projects</button>
 
-
         </section>
-
-
 
         <section id="projects">
 
@@ -153,11 +151,7 @@
 
                         </div>
 
-                        <pre id="codeDisplay">
-
-Choose a file from the Project Explorer.
-
-                        </pre>
+                        <pre><code id="codeDisplay" class="language-python">Choose a file from the Project Explorer.</code></pre>
 
                     </div>
 
@@ -166,8 +160,15 @@ Choose a file from the Project Explorer.
             </div>
 
         </section>
+
     </main>
 
+    <footer>
+        <p>© 2026 Angelo Rodriguez</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
     <script src="script.js"></script>
 
 </body>

@@ -15,19 +15,18 @@ const downloadScanFile = document.getElementById("downloadScanFile");
 const loopFile = document.getElementById("loopFile");
 const specificationsFile = document.getElementById("specificationsFile");
 
-// Temporary code (we'll replace this later with your real files)
+// Project data
 const projects = {
 
-    taskAutomation:{
+    taskAutomation: {
 
-        title:"Task Automation",
+        title: "Task Automation",
 
-        description:"...",
+        description: "...",
 
-        files:{
+        files: {
 
-            "test.py": String.raw`
-import time
+            "test.py": `import time
 import zipfile
 from pathlib import Path
 
@@ -36,11 +35,11 @@ from pathlib import Path
 # ==========================================
 
 DOWNLOADS_FOLDER = Path(
-    r"C:\Users\ajrodriguez\Downloads"
+    r"C:\\Users\\ajrodriguez\\Downloads"
 )
 
 DESTINATION_FOLDER = Path(
-    r"S:\1503 - MCAAD\1503 Penn Ave - Milken Institute\Construction Management\0. PHASE 2\Phase 2 - Close out\Klaros - Submittals2"
+    r"S:\\1503 - MCAAD\\1503 Penn Ave - Milken Institute\\Construction Management\\0. PHASE 2\\Phase 2 - Close out\\Klaros - Submittals2"
 )
 
 SCAN_INTERVAL_SECONDS = 2
@@ -66,7 +65,7 @@ def zip_is_finished(zip_path):
 def clean_filename(filename):
 
     filename = filename.replace("/", "_")
-    filename = filename.replace("\\", "_")
+    filename = filename.replace("\\\\", "_")
 
     invalid_chars = '<>:"|?*'
 
@@ -101,7 +100,7 @@ def get_unique_path(destination_file):
 
 def extract_zip(zip_path):
 
-    print(f"\nProcessing: {zip_path.name}")
+    print(f"\\nProcessing: {zip_path.name}")
 
     extracted_count = 0
     renamed_count = 0
@@ -232,137 +231,136 @@ def main():
 if __name__ == "__main__":
     main()`,
 
-            "download_scan.py":String.raw`
-import time
+            "download_scan.py": `import time
 import shutil
 from pathlib import Path
- 
+
 # ==========================================
 # CONFIGURATION
 # ==========================================
- 
+
 DOWNLOADS_FOLDER = Path(
-    r"C:\Users\ajrodriguez\Downloads"
+    r"C:\\Users\\ajrodriguez\\Downloads"
 )
- 
+
 DESTINATION_FOLDER = Path(
-    r"S:\1503 - MCAAD\1503 Penn Ave - Milken Institute\Construction Management\0. PHASE 2\Phase 2 - Close out\Klaros - RFI's"
+    r"S:\\1503 - MCAAD\\1503 Penn Ave - Milken Institute\\Construction Management\\0. PHASE 2\\Phase 2 - Close out\\Klaros - RFI's"
 )
- 
+
 SCAN_INTERVAL_SECONDS = 2
 
 # ==========================================
 # FUNCTIONS
 # ==========================================
- 
+
 def file_is_finished(file_path):
- 
+
     try:
- 
+
         size1 = file_path.stat().st_size
- 
+
         time.sleep(1)
- 
+
         size2 = file_path.stat().st_size
- 
+
         return size1 == size2
- 
+
     except Exception:
- 
+
         return False
- 
- 
+
+
 def clean_filename(filename):
- 
+
     filename = filename.replace("/", "_")
-    filename = filename.replace("\\", "_")
- 
+    filename = filename.replace("\\\\", "_")
+
     invalid_chars = '<>:"|?*'
- 
+
     for char in invalid_chars:
         filename = filename.replace(char, "_")
- 
+
     filename = " ".join(filename.split())
- 
+
     return filename.strip()
- 
- 
+
+
 def get_unique_path(destination_file):
- 
+
     if not destination_file.exists():
         return destination_file
- 
+
     stem = destination_file.stem
     suffix = destination_file.suffix
     parent = destination_file.parent
- 
+
     counter = 2
- 
+
     while True:
- 
+
         candidate = parent / f"{stem} ({counter}){suffix}"
- 
+
         if not candidate.exists():
             return candidate
- 
+
         counter += 1
- 
- 
+
+
 def move_file(file_path, move_count):
- 
+
     try:
- 
+
         filename = clean_filename(
             file_path.name
         )
- 
+
         if not filename:
             return
- 
+
         destination_file = (
             DESTINATION_FOLDER /
             filename
         )
- 
+
         destination_file = get_unique_path(
             destination_file
         )
- 
+
         shutil.move(
             str(file_path),
             str(destination_file)
         )
- 
+
         print(
             f"[{move_count}] {destination_file.name}"
         )
- 
+
     except Exception as e:
- 
-        print("\n" + "=" * 60)
+
+        print("\\n" + "=" * 60)
         print("FILE TRANSFER FAILED")
         print(f"File: {file_path.name}")
         print(f"Error: {e}")
-        print("=" * 60 + "\n")
- 
- 
+        print("=" * 60 + "\\n")
+
+
 # ==========================================
 # MAIN
 # ==========================================
- 
+
 def main():
- 
+
     DESTINATION_FOLDER.mkdir(
         parents=True,
         exist_ok=True
     )
- 
+
     ignored_startup_files = {
         file.resolve()
         for file in DOWNLOADS_FOLDER.iterdir()
         if file.is_file()
     }
- 
+
     print("KLAROS Download Monitor Started")
     print(f"Watching: {DOWNLOADS_FOLDER}")
     print(f"Moving To: {DESTINATION_FOLDER}")
@@ -371,39 +369,41 @@ def main():
         f"files already in Downloads"
     )
     print()
- 
+
     move_count = 1
- 
+
     while True:
- 
+
         for file in DOWNLOADS_FOLDER.iterdir():
- 
+
             if not file.is_file():
                 continue
- 
+
             if file.suffix.lower() == ".crdownload":
                 continue
- 
+
             file_path = file.resolve()
- 
+
             if file_path in ignored_startup_files:
                 continue
- 
+
             if not file_is_finished(file):
                 continue
- 
+
             move_file(file, move_count)
             move_count += 1
- 
+
         time.sleep(
             SCAN_INTERVAL_SECONDS
         )
- 
- 
+
+
 if __name__ == "__main__":
     main()`,
 
-            
+            "klaros_loop2.py": `# Coming soon...`,
+
+            "klaros_specifications.py": `# Coming soon...`
 
         }
 
@@ -424,6 +424,10 @@ projectsButton.addEventListener("click", () => {
 projectCard.addEventListener("click", () => {
 
     projectViewer.classList.remove("hidden");
+
+    requestAnimationFrame(() => {
+        projectViewer.classList.add("show");
+    });
 
     projectViewer.scrollIntoView({
         behavior: "smooth"
@@ -448,6 +452,8 @@ function openFile(fileName, button) {
 
         codeDisplay.textContent =
             projects.taskAutomation.files[fileName];
+
+        Prism.highlightElement(codeDisplay);
 
         codeDisplay.style.opacity = 1;
 
