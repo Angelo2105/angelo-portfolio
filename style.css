@@ -249,3 +249,40 @@ pre{
     font-weight:bold;
 
 }
+.featureList{
+
+    line-height:2;
+
+    color:#d0d0d0;
+
+}
+
+.techStack{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:15px;
+
+    margin-bottom:30px;
+
+}
+
+.techStack span{
+
+    background:#2d2d2d;
+
+    padding:8px 14px;
+
+    border-radius:25px;
+
+    font-size:14px;
+
+    color:#6cb6ff;
+
+    border:1px solid #3f3f46;
+
+}
