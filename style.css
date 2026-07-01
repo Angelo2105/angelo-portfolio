@@ -28,7 +28,7 @@ button{
     color:white;
     font-size:18px;
     cursor:pointer;
-    justify-content:center;
+
 }
 
 button:hover{
@@ -49,4 +49,10 @@ nav a {
 }
 nav a:hover{
     color:#69b4ff;
+}
+
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
