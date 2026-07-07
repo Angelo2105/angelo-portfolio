@@ -402,7 +402,7 @@ if __name__ == "__main__":
     main()`,
 
             "******_loop2.py": String.raw`
-            import re
+import re
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 import time
@@ -745,7 +745,7 @@ with sync_playwright() as p:
     browser.close()`,
 
             "******_specifications.py": String.raw`
-            from pathlib import Path
+from pathlib import Path
 from playwright.sync_api import sync_playwright
 import time
  
