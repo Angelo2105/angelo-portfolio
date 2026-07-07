@@ -35,7 +35,7 @@ from pathlib import Path
 # ==========================================
 
 DOWNLOADS_FOLDER = Path(
-    r"C:\Users\ajrodriguez\Downloads"
+    r"C:\Users\username\Downloads"
 )
 
 DESTINATION_FOLDER = Path(
@@ -240,7 +240,7 @@ from pathlib import Path
 # ==========================================
 
 DOWNLOADS_FOLDER = Path(
-    r"C:\Users\ajrodriguez\Downloads"
+    r"C:\Users\username\Downloads"
 )
 
 DESTINATION_FOLDER = Path(
@@ -408,7 +408,7 @@ from playwright.sync_api import sync_playwright
 import time
  
 DOWNLOADS_FOLDER = Path(
-    r"C:\Users\ajrodriguez\Downloads"
+    r"C:\Users\username\Downloads"
 )
  
 ******_URL = (
@@ -750,11 +750,11 @@ from playwright.sync_api import sync_playwright
 import time
  
 DOWNLOADS_FOLDER = Path(
-    r"C:\Users\ajrodriguez\Downloads"
+    r"C:\Users\username\Downloads"
 )
  
 ******_URL = (
-    "https://auth.******t***.com/o/login#:~:text=Login"
+    "https://auth.*********.com/o/login#:~:text=Login"
 )
  
 START_INDEX = 1
