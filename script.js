@@ -39,7 +39,8 @@ DOWNLOADS_FOLDER = Path(
 )
 
 DESTINATION_FOLDER = Path(
-    r"S:\1503 - MCAAD\1503 Penn Ave - Milken Institute\Construction Management\0. PHASE 2\Phase 2 - Close out\Klaros - Submittals2"
+    r"S:\1503 - MCAAD\1503 Penn Ave - Milken Institute\Construction Management
+    \0. PHASE 2\Phase 2 - Close out\Klaros - Submittals2"
 )
 
 SCAN_INTERVAL_SECONDS = 2
@@ -244,7 +245,8 @@ DOWNLOADS_FOLDER = Path(
 )
 
 DESTINATION_FOLDER = Path(
-    r"S:\1503 - MCAAD\1503 Penn Ave - Milken Institute\Construction Management\0. PHASE 2\Phase 2 - Close out\Klaros - RFI's"
+    r"S:\1503 - MCAAD\1503 Penn Ave - Milken Institute\Construction Management
+    \0.PHASE 2\Phase 2 - Close out\Klaros - RFI's"
 )
 
 SCAN_INTERVAL_SECONDS = 2
