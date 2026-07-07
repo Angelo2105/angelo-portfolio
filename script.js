@@ -39,8 +39,7 @@ DOWNLOADS_FOLDER = Path(
 )
 
 DESTINATION_FOLDER = Path(
-    r"S:\1503 - MCAAD\1503 Penn Ave - Milken Institute\Construction Management
-    \0. PHASE 2\Phase 2 - Close out\Klaros - Submittals2"
+    r"S:\********\**** P****** - M********\Construction Management"
 )
 
 SCAN_INTERVAL_SECONDS = 2
@@ -201,7 +200,7 @@ def main():
         for file in DOWNLOADS_FOLDER.glob("*.zip")
     }
 
-    print("KLAROS ZIP Monitor Started")
+    print("****** ZIP Monitor Started")
     print(f"Watching: {DOWNLOADS_FOLDER}")
     print(f"Extracting To: {DESTINATION_FOLDER}")
     print(
@@ -245,8 +244,7 @@ DOWNLOADS_FOLDER = Path(
 )
 
 DESTINATION_FOLDER = Path(
-    r"S:\1503 - MCAAD\1503 Penn Ave - Milken Institute\Construction Management
-    \0.PHASE 2\Phase 2 - Close out\Klaros - RFI's"
+    r"S:\********\**** P****** - M********\Construction Management"
 )
 
 SCAN_INTERVAL_SECONDS = 2
@@ -363,7 +361,7 @@ def main():
         if file.is_file()
     }
 
-    print("KLAROS Download Monitor Started")
+    print("****** Download Monitor Started")
     print(f"Watching: {DOWNLOADS_FOLDER}")
     print(f"Moving To: {DESTINATION_FOLDER}")
     print(
@@ -403,7 +401,7 @@ def main():
 if __name__ == "__main__":
     main()`,
 
-            "klaros_loop2.py": String.raw`
+            "******_loop2.py": String.raw`
             import re
 from pathlib import Path
 from playwright.sync_api import sync_playwright
@@ -413,11 +411,11 @@ DOWNLOADS_FOLDER = Path(
     r"C:\Users\ajrodriguez\Downloads"
 )
  
-KLAROS_URL = (
-    "https://auth.klarostech.com/o/login#:~:text=Login"
+******_URL = (
+    "https://auth.******t***.com/o/login#:~:text=Login"
 )
  
-START_INDEX = 1001
+START_INDEX = 0
 BATCH_SIZE = 50
  
 # How many consecutive scrolls with no new
@@ -482,28 +480,28 @@ with sync_playwright() as p:
     page = context.new_page()
  
     page.goto(
-        KLAROS_URL,
+        ******_URL,
         wait_until="domcontentloaded",
         timeout=120000
     )
  
     print(
-        "\nChrome opened and Klaros login page loaded."
+        "\nChrome opened and ****** login page loaded."
     )
  
     wait_for_enter(
-        "Log into Klaros manually, navigate to the page "
+        "Log into ****** manually, navigate to the page "
         "showing the 3 projects, then press ENTER."
     )
  
     if not confirm(
-        "Open 1061 - Milken Phase 2?"
+        "Open 1061 - ****** Phase 2?"
     ):
         browser.close()
         raise SystemExit
  
     page.get_by_text(
-        "- Milken Phase 2Mixed Use0"
+        "- ****** Phase 2Mixed Use0"
     ).click()
  
     time.sleep(3)
@@ -746,7 +744,7 @@ with sync_playwright() as p:
  
     browser.close()`,
 
-            "klaros_specifications.py": String.raw`
+            "******_specifications.py": String.raw`
             from pathlib import Path
 from playwright.sync_api import sync_playwright
 import time
@@ -755,8 +753,8 @@ DOWNLOADS_FOLDER = Path(
     r"C:\Users\ajrodriguez\Downloads"
 )
  
-KLAROS_URL = (
-    "https://auth.klarostech.com/o/login#:~:text=Login"
+******_URL = (
+    "https://auth.******t***.com/o/login#:~:text=Login"
 )
  
 START_INDEX = 1
@@ -824,28 +822,28 @@ with sync_playwright() as p:
     page = context.new_page()
  
     page.goto(
-        KLAROS_URL,
+        ******_URL,
         wait_until="domcontentloaded",
         timeout=120000
     )
  
     print(
-        "\nChrome opened and Klaros login page loaded."
+        "\nChrome opened and ****** login page loaded."
     )
  
     wait_for_enter(
-        "Log into Klaros manually, navigate to the page "
+        "Log into ****** manually, navigate to the page "
         "showing the 3 projects, then press ENTER."
     )
  
     if not confirm(
-        "Open 1061 - Milken Phase 2?"
+        "Open **** - ****** Phase 2?"
     ):
         browser.close()
         raise SystemExit
  
     page.get_by_text(
-        "- Milken Phase 2Mixed Use0"
+        "- ****** Phase 2Mixed Use0"
     ).click()
  
     time.sleep(3)
@@ -1149,9 +1147,9 @@ downloadScanFile.addEventListener("click", () => {
 });
 
 loopFile.addEventListener("click", () => {
-    openFile("klaros_loop2.py", loopFile);
+    openFile("******_loop2.py", loopFile);
 });
 
 specificationsFile.addEventListener("click", () => {
-    openFile("klaros_specifications.py", specificationsFile);
+    openFile("******_specifications.py", specificationsFile);
 });
