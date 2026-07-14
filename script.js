@@ -5,6 +5,10 @@ const projectsButton = document.getElementById("projectsButton");
 const projectCard = document.getElementById("taskAutomation");
 const projectViewer = document.getElementById("projectViewer");
 
+// Portfolio card
+const portfolioCard = document.getElementById("portfolioWebsite");
+const portfolioViewer = document.getElementById("portfolioViewer");
+
 // Editor
 const codeDisplay = document.getElementById("codeDisplay");
 const editorTab = document.getElementById("editorTab");
@@ -1106,6 +1110,24 @@ projectCard.addEventListener("click", () => {
     });
 
     projectViewer.scrollIntoView({
+        behavior: "smooth"
+    });
+
+});
+
+// Open portfolio
+portfolioCard.addEventListener("click", () => {
+
+    projectViewer.classList.add("hidden");
+    projectViewer.classList.remove("show");
+
+    portfolioViewer.classList.remove("hidden");
+
+    requestAnimationFrame(() => {
+        portfolioViewer.classList.add("show");
+    });
+
+    portfolioViewer.scrollIntoView({
         behavior: "smooth"
     });
 
