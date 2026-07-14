@@ -145,7 +145,8 @@ nav a:hover{
     font-size:15px;
 }
 
-#projectViewer{
+#projectViewer,
+#portfolioViewer{
     width:min(1200px, 95%);
     margin:40px auto;
     opacity:0;
@@ -155,7 +156,8 @@ nav a:hover{
         transform .35s;
 }
 
-#projectViewer.show{
+#projectViewer.show,
+#portfolioViewer.show{
     opacity:1;
     transform:
         translateY(0)
