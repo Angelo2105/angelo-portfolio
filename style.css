@@ -95,7 +95,7 @@ nav a:hover{
     transition:.25s;
     border:1px solid #2f2f2f;
     max-width:420px;
-    margin:0 auto;
+    margin:0 auto 20px;
 }
 
 .project-card:hover{
